@@ -1,0 +1,3 @@
+/* (Beta) Export of data model MachineComponent of the subject dataModel.PredictiveMaintenance for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+
+CREATE TABLE MachineComponent (componentCost NUMERIC, componentDescription TEXT, componentSupplierID TEXT, dateGuaranteedDelivery DATE, deliveryCost NUMERIC, locationInWarehouse TEXT, measurement JSON, numberOfPiecesAvailable INTEGER, numberOfPiecesOnDelivery INTEGER, requiresSkill JSON, supplierID TEXT, type TEXT, warehouseID TEXT);
