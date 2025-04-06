@@ -1,0 +1,3 @@
+/* (Beta) Export of data model Appointment of the subject dataModel.PredictiveMaintenance for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+
+CREATE TABLE Appointment (appointmentDescription TEXT, category TEXT, externalKey JSON, flag TEXT, from DATE, note TEXT, recurring BOOLEAN, recurringException TEXT, recurringRule TEXT, to DATE, type TEXT, wholeDay BOOLEAN);
