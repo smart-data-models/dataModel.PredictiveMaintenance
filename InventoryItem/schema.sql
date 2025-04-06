@@ -1,0 +1,3 @@
+/* (Beta) Export of data model InventoryItem of the subject dataModel.PredictiveMaintenance for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+
+CREATE TABLE InventoryItem (availableTotal INTEGER, itemLocation TEXT, itemNumber TEXT, name TEXT, netWeight NUMERIC, onDelivery INTEGER, orderedBooked INTEGER, physicalAvailability INTEGER, physicalBooked INTEGER, physicalStock INTEGER, researchName TEXT, site TEXT, totalOrdered INTEGER, type TEXT, warehouseID TEXT);
