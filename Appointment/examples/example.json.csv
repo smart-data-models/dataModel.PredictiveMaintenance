@@ -1,0 +1,2 @@
+"id_", "type_", "externalKey__0_", "externalKey__1_", "from_", "to_", "wholeDay_", "recurring_", "category_", "appointmentDescription_"
+"https://smart-data-models.github.io/dataModel.PredictiveMaintenance/Appointment/appointment01", "Appointment", "F105024", "0000000000 970", "2024-08-12", "2024-08-14", "True", "False", "808080", "EX_Ferie  NO PRESIDIO U-FORM"
