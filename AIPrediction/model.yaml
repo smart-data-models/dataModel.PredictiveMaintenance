@@ -1,0 +1,127 @@
+AIPrediction:
+  description: Represent an AI forecasted needed maintenance intervention
+  properties:
+    anomalyType:
+      description: Class and Grade of anomaly (Classification referred to the maintenance).
+      type: string
+      x-ngsi:
+        type: Property
+    computedParameters:
+      description: ListProperty. List of computed parameters.
+      items:
+        description: The computed parameter with its value.
+        properties:
+          name:
+            description: The parameter's name.
+            type: string
+            x-ngsi:
+              type: Property
+          value:
+            description: The value of the parameter.
+            type: number
+            x-ngsi:
+              type: Property
+        type: object
+        x-ngsi:
+          type: Property
+      type: array
+    country:
+      description: The country where the prediction is relevant.
+      type: string
+      x-ngsi:
+        type: Property
+    date:
+      description: The date of the prediction.
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    exceededThreshold:
+      description: ListProperty. List of thresholds that have been exceeded.
+      items:
+        description: The parameter whose threshold has been exceeded.
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    head:
+      description: Head-related information.
+      type: string
+      x-ngsi:
+        type: Property
+    interventionDuration:
+      description: Duration of the intervention in minutes
+      type: integer
+      x-ngsi:
+        type: Property
+    laser:
+      description: Laser-related information.
+      type: string
+      x-ngsi:
+        type: Property
+    maintenanceTypeBin:
+      description: Binary representation of the maintenance type.
+      type: string
+      x-ngsi:
+        type: Property
+    maintenanceTypeDec:
+      description: Decimal representation of the maintenance type.
+      type: integer
+      x-ngsi:
+        type: Property
+    requiresComponent:
+      description: ListProperty. List of machine components required for the maintenance.
+      items:
+        description: Required machine components.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    requiresSkill:
+      description: ListProperty. Experience and tools required.
+      items:
+        description: Technical skill description.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    runningTime:
+      description: Running time in minutes.
+      type: integer
+      x-ngsi:
+        type: Property
+    type:
+      description: The type of the entity (InventoryItem).
+      type: string
+      x-ngsi:
+        type: Property
+    weeksForIntervention:
+      description: Deadline for intervention, in weeks (if anomalyClas is 'Perfect' and this is 52, no intervention is actually required).
+      type: integer
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - date
+    - laser
+    - head
+    - runningTime
+    - computedParameters
+    - anomalyType
+    - weeksForIntervention
+    - exceededThreshold
+    - maintenanceTypeBin
+    - maintenanceTypeDec
+    - requiresSkill
+    - requiresComponent
+    - interventionDuration
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/AIPrediction/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/AIPrediction/schema.json
+  x-model-tags: maintenance
+  x-version: 0.0.1
