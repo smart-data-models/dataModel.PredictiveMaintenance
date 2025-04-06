@@ -1,0 +1,91 @@
+InventoryItem:
+  description: Represent an item of the inventory inside a warehouse
+  properties:
+    availableTotal:
+      description: The total available quantity of the item.
+      type: integer
+      x-ngsi:
+        type: Property
+    itemLocation:
+      description: The location of the item.
+      type: string
+      x-ngsi:
+        type: Property
+    itemNumber:
+      description: The unique identifier for the item.
+      type: string
+      x-ngsi:
+        type: Property
+    name:
+      description: The name of the item.
+      type: string
+      x-ngsi:
+        type: Property
+    netWeight:
+      description: The net weight of the item.
+      type: number
+      x-ngsi:
+        type: Property
+    onDelivery:
+      description: The quantity of the item on delivery.
+      type: integer
+      x-ngsi:
+        type: Property
+    orderedBooked:
+      description: The quantity of the item ordered and booked.
+      type: integer
+      x-ngsi:
+        type: Property
+    physicalAvailability:
+      description: The physical availability of the item.
+      type: integer
+      x-ngsi:
+        type: Property
+    physicalBooked:
+      description: The physical booked quantity of the item.
+      type: integer
+      x-ngsi:
+        type: Property
+    physicalStock:
+      description: The physical stock of the item.
+      type: integer
+      x-ngsi:
+        type: Property
+    researchName:
+      description: The research name of the item.
+      type: string
+      x-ngsi:
+        type: Property
+    site:
+      description: The site where the item is located.
+      type: string
+      x-ngsi:
+        type: Property
+    totalOrdered:
+      description: The total quantity ordered for the item.
+      type: integer
+      x-ngsi:
+        type: Property
+    type:
+      description: The type of the entity (InventoryItem).
+      type: string
+      x-ngsi:
+        type: Property
+    warehouseID:
+      description: The unique identifier for the warehouse.
+      type: string
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - warehouseID
+    - itemNumber
+    - physicalStock
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/InventoryItem/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/InventoryItem/schema.json
+  x-model-tags: maintenance
+  x-version: 0.0.1
