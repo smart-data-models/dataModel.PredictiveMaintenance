@@ -1,0 +1,122 @@
+MaintenanceService:
+  description: Represent a scheduled maintenance operation
+  properties:
+    activityRequiredOfCustomer:
+      description: ListProperty. Customer preparation activities for maintenance (To be confirmed by customer).
+      items:
+        description: Required activities.
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    anomalyIndicator:
+      description: ListProperty. Technical information about the anomaly (Information on analysis).
+      items:
+        description: Technical information about the anomaly (Information on analysis).
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    anomalyType:
+      description: Class and Grade of anomaly (Classification referred to the maintenance).
+      type: string
+      x-ngsi:
+        type: Property
+    costForecast:
+      description: Calculated cost of the activity (To be confirmed at the end of maintenance).
+      type: number
+      x-ngsi:
+        type: Property
+    customerID:
+      description: Identify the customer.
+      type: string
+      x-ngsi:
+        type: Property
+    durationOfOperation:
+      description: Working time on system (Number of hours to execute the activity).
+      type: number
+      x-ngsi:
+        type: Property
+    hasConfiguration:
+      description: ListProperty. Machine description.
+      items:
+        description: List of components & options.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    machineAddressLocation:
+      description: Machine address (Factory address).
+      type: string
+      x-ngsi:
+        type: Property
+    machineID:
+      description: Identify the system (S/N or Unique Identifier).
+      type: string
+      x-ngsi:
+        type: Property
+    maintenanceDateScheduled:
+      description: Maintenance date proposed (To be confirmed by customer).
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    maintenanceDeadline:
+      description: Maintenance required by .. (Last date for optimal action).
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    maintenanceOperator:
+      description: Operator in charge of the activity.
+      format: uri
+      type: string
+      x-ngsi:
+        type: Relationship
+    maintenanceRequired:
+      description: ListProperty. Maintenance Service description (List of activity).
+      items:
+        description: Required maintenance activity.
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    requiresComponent:
+      description: ListProperty. List of machine components required for the maintenance.
+      items:
+        description: Required machine components.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    type:
+      description: The type of the entity (MaintenanceService).
+      type: string
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - machineID
+    - customerID
+    - machineAddressLocation
+    - hasConfiguration
+    - anomalyType
+    - anomalyIndicator
+    - maintenanceDeadline
+    - maintenanceDateScheduled
+    - maintenanceRequired
+    - maintenanceOperator
+    - requiresComponent
+    - durationOfOperation
+    - activityRequiredOfCustomer
+    - costForecast
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/MaintenanceService/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/MaintenanceService/schema.json
+  x-model-tags: maintenace
+  x-version: 0.0.1
