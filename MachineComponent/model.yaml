@@ -1,0 +1,176 @@
+MachineComponent:
+  description: Represent a component inside a machine or to be replaced
+  properties:
+    componentCost:
+      description: Cost for the customer in Euros.
+      type: number
+      x-ngsi:
+        type: Property
+    componentDescription:
+      description: Product Name and a brief description, also link to supplier site.
+      type: string
+      x-ngsi:
+        type: Property
+    componentSupplierID:
+      description: Supplier Component Code - Original.
+      type: string
+      x-ngsi:
+        type: Property
+    dateGuaranteedDelivery:
+      description: Guaranteed availability date confirmed by supplier.
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    deliveryCost:
+      description: Cost for the customer in Euros.
+      type: number
+      x-ngsi:
+        type: Property
+    locationInWarehouse:
+      description: Identify the component location.
+      type: string
+      x-ngsi:
+        type: Property
+    measurement:
+      description: The physical properties of the component
+      properties:
+        height:
+          description: Height measurement of the object.
+          properties:
+            unit:
+              default: cm
+              description: Unit of measurement for height (e.g., cm, m, in).
+              type: string
+              x-ngsi:
+                type: Property
+            value:
+              description: Height value of the object.
+              type: number
+              x-ngsi:
+                type: Property
+          required:
+            - value
+            - unit
+          type: object
+          x-ngsi:
+            type: Property
+        length:
+          description: Length of the object.
+          properties:
+            unit:
+              default: cm
+              description: Unit of measurement for length (e.g., cm, m, in).
+              type: string
+              x-ngsi:
+                type: Property
+            value:
+              description: Length value of the object.
+              type: number
+              x-ngsi:
+                type: Property
+          required:
+            - value
+            - unit
+          type: object
+          x-ngsi:
+            type: Property
+        weight:
+          description: Weight measurement of the object.
+          properties:
+            unit:
+              default: kg
+              description: Unit of measurement for weight (e.g., kg, lb).
+              type: string
+              x-ngsi:
+                type: Property
+            value:
+              description: Weight value of the object.
+              type: number
+              x-ngsi:
+                type: Property
+          required:
+            - value
+            - unit
+          type: object
+          x-ngsi:
+            type: Property
+        width:
+          description: Width measurement of the object.
+          properties:
+            unit:
+              default: cm
+              description: Unit of measurement for width (e.g., cm, m, in).
+              type: string
+              x-ngsi:
+                type: Property
+            value:
+              description: Width value of the object.
+              type: number
+              x-ngsi:
+                type: Property
+          required:
+            - value
+            - unit
+          type: object
+          x-ngsi:
+            type: Property
+      required:
+        - height
+        - width
+        - length
+        - weight
+      type: object
+      x-ngsi:
+        type: Property
+    numberOfPiecesAvailable:
+      description: Current stock availability in different warehouses.
+      type: integer
+      x-ngsi:
+        type: Property
+    numberOfPiecesOnDelivery:
+      description: Order in progress - Info about order confirmation.
+      type: integer
+      x-ngsi:
+        type: Property
+    requiresSkill:
+      description: ListProperty. Experience and tools required.
+      items:
+        description: Technical skill description.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    supplierID:
+      description: Identify the Supplier - Contact and info.
+      type: string
+      x-ngsi:
+        type: Property
+    type:
+      description: The type of the entity (MachineComponent).
+      type: string
+      x-ngsi:
+        type: Property
+    warehouseID:
+      description: Identify the warehouse places, also c/o customer of service suppliers.
+      type: string
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - componentSupplierID
+    - componentDescription
+    - requiresSkill
+    - supplierID
+    - warehouseID
+    - locationInWarehouse
+    - measurement
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/MachineComponent/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/MachineComponent/schema.json
+  x-model-tags: maintenance
+  x-version: 0.0.1
