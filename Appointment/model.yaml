@@ -1,0 +1,85 @@
+Appointment:
+  description: Represent an scheduled appointment for the operator
+  properties:
+    appointmentDescription:
+      description: The description of the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    category:
+      description: The category of the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    externalKey:
+      description: ListProperty. The external keys for this element.
+      items:
+        description: The external key for this element.
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    flag:
+      description: The flag for the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    from:
+      description: The start date and time of the appointment.
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    note:
+      description: Additional notes for the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    recurring:
+      description: Indicates if the appointment is recurring.
+      type: boolean
+      x-ngsi:
+        type: Property
+    recurringException:
+      description: The recurring exception for the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    recurringRule:
+      description: The recurring rule for the appointment.
+      type: string
+      x-ngsi:
+        type: Property
+    to:
+      description: The end date and time of the appointment.
+      format: date
+      type: string
+      x-ngsi:
+        type: Property
+    type:
+      description: The type of the entity (InventoryItem).
+      type: string
+      x-ngsi:
+        type: Property
+    wholeDay:
+      description: Indicates if the appointment is a whole day event.
+      type: boolean
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - externalKey
+    - from
+    - to
+    - wholeDay
+    - recurring
+    - category
+    - appointmentDescription
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/Appointment/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/Appointment/schema.json
+  x-model-tags: maintenance
+  x-version: 0.0.1
