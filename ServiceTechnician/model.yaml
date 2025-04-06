@@ -1,0 +1,75 @@
+ServiceTechnician:
+  description: Represent a maintenance operator providing the service
+  properties:
+    calendar:
+      description: ListProperty. List of planned activities.
+      items:
+        description: Calendar of activities for the period already planned.
+        format: date
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    geographicalArea:
+      description: Definition of the area and location.
+      type: string
+      x-ngsi:
+        type: Property
+    hasSkill:
+      description: ListProperty. Description of capabilities and experiences.
+      items:
+        description: Description of capabilities and experiences.
+        format: uri
+        type: string
+        x-ngsi:
+          type: Relationship
+      type: array
+    historicalService:
+      description: ListProperty. List of managed services.
+      items:
+        description: Managed service.
+        format: date
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    organization:
+      description: Organization to which the technician belongs (PRIMA branch or external office).
+      type: string
+      x-ngsi:
+        type: Property
+    referenceAddress:
+      description: Starting position (Office and Home).
+      type: string
+      x-ngsi:
+        type: Property
+    toolProvided:
+      description: ListProperty. Technical equipment (special equipment not always provided for all teams).
+      items:
+        description: Name of the required tool.
+        type: string
+        x-ngsi:
+          type: Property
+      type: array
+    type:
+      description: The type of the entity (ServiceTechnician).
+      type: string
+      x-ngsi:
+        type: Property
+  required:
+    - id
+    - type
+    - organization
+    - hasSkill
+    - toolProvided
+    - geographicalArea
+    - referenceAddress
+    - calendar
+    - historicalService
+  type: object
+  x-derived-from: ''
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/ServiceTechnician/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/ServiceTechnician/schema.json
+  x-model-tags: maintenace
+  x-version: 0.0.1
