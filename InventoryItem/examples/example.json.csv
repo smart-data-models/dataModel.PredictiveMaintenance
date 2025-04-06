@@ -1,0 +1,2 @@
+"id_", "type_", "warehouseID_", "itemNumber_", "name_", "physicalStock_", "researchName_", "site_", "itemLocation_", "netWeight_"
+"https://smart-data-models.github.io/dataModel.PredictiveMaintenance/InventoryItem/inventoryItem01", "InventoryItem", "0000", "1055.52395.191", "Fusibile SIEMENS 3NA3 807", "10", "FusibileSIEMENS3NA38", "01", "SILO2/0027", "0.13"
