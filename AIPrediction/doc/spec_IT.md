@@ -1,0 +1,802 @@
+<!-- 10-Header -->  
+[![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
+Entità: AIPrediction  
+====================<!-- /10-Header -->  
+<!-- 15-License -->  
+[Licenza aperta](https://github.com/smart-data-models//dataModel.PredictiveMaintenance/blob/master/AIPrediction/LICENSE.md)  
+[documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+<!-- /15-License -->  
+<!-- 20-Description -->  
+Descrizione globale: **Rappresenta la previsione di un intervento di manutenzione necessario da parte dell'IA**.  
+versione: 0.0.1  
+<!-- /20-Description -->  
+<!-- 30-PropertiesList -->  
+
+## Elenco delle proprietà  
+
+<sup><sub>[*] Se non c'è un tipo in un attributo è perché potrebbe avere diversi tipi o diversi formati/modelli</sub></sup>.  
+- `anomalyType[string]`: Classe e grado dell'anomalia (classificazione riferita alla manutenzione).  - `computedParameters[array]`: ElencoProprietà. Elenco dei parametri calcolati.  - `country[string]`: Il Paese in cui la previsione è rilevante.  - `date[date]`: La data della previsione.  - `exceededThreshold[array]`: ElencoProprietà. Elenco delle soglie superate.  - `head[string]`: Informazioni relative alla testa.  - `interventionDuration[integer]`: Durata dell'intervento in minuti  - `laser[string]`: Informazioni sul laser.  - `maintenanceTypeBin[string]`: Rappresentazione binaria del tipo di manutenzione.  - `maintenanceTypeDec[integer]`: Rappresentazione decimale del tipo di manutenzione.  - `requiresComponent[array]`: ElencoProprietà. Elenco dei componenti della macchina necessari per la manutenzione.  - `requiresSkill[array]`: ElencoProprietà. Esperienza e strumenti richiesti.  - `runningTime[integer]`: Durata in minuti.  - `type[string]`: Il tipo di entità (InventoryItem).  - `weeksForIntervention[integer]`: Termine ultimo per l'intervento, in settimane (se anomalyClas è 'Perfect' e questo è 52, non è necessario alcun intervento).  <!-- /30-PropertiesList -->  
+<!-- 35-RequiredProperties -->  
+Proprietà richieste  
+- `anomalyType`  - `computedParameters`  - `date`  - `exceededThreshold`  - `head`  - `id`  - `interventionDuration`  - `laser`  - `maintenanceTypeBin`  - `maintenanceTypeDec`  - `requiresComponent`  - `requiresSkill`  - `runningTime`  - `type`  - `weeksForIntervention`  <!-- /35-RequiredProperties -->  
+<!-- 40-NotesYaml -->  
+<!-- /40-NotesYaml -->  
+<!-- 50-DataModelHeader -->  
+## Modello di dati descrizione delle proprietà  
+Ordinati in ordine alfabetico (clicca per i dettagli)  
+<!-- /50-DataModelHeader -->  
+<!-- 60-ModelYaml -->  
+<details><summary><strong>full yaml details</strong></summary>    
+```yaml  
+AIPrediction:    
+  description: Represent an AI forecasted needed maintenance intervention    
+  properties:    
+    anomalyType:    
+      description: Class and Grade of anomaly (Classification referred to the maintenance).    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    computedParameters:    
+      description: ListProperty. List of computed parameters.    
+      items:    
+        description: The computed parameter with its value.    
+        properties:    
+          name:    
+            description: The parameter's name.    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          value:    
+            description: The value of the parameter.    
+            type: number    
+            x-ngsi:    
+              type: Property    
+        type: object    
+        x-ngsi:    
+          type: Property    
+      type: array    
+    country:    
+      description: The country where the prediction is relevant.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    date:    
+      description: The date of the prediction.    
+      format: date    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    exceededThreshold:    
+      description: ListProperty. List of thresholds that have been exceeded.    
+      items:    
+        description: The parameter whose threshold has been exceeded.    
+        type: string    
+        x-ngsi:    
+          type: Property    
+      type: array    
+    head:    
+      description: Head-related information.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    interventionDuration:    
+      description: Duration of the intervention in minutes    
+      type: integer    
+      x-ngsi:    
+        type: Property    
+    laser:    
+      description: Laser-related information.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    maintenanceTypeBin:    
+      description: Binary representation of the maintenance type.    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    maintenanceTypeDec:    
+      description: Decimal representation of the maintenance type.    
+      type: integer    
+      x-ngsi:    
+        type: Property    
+    requiresComponent:    
+      description: ListProperty. List of machine components required for the maintenance.    
+      items:    
+        description: Required machine components.    
+        format: uri    
+        type: string    
+        x-ngsi:    
+          type: Relationship    
+      type: array    
+    requiresSkill:    
+      description: ListProperty. Experience and tools required.    
+      items:    
+        description: Technical skill description.    
+        format: uri    
+        type: string    
+        x-ngsi:    
+          type: Relationship    
+      type: array    
+    runningTime:    
+      description: Running time in minutes.    
+      type: integer    
+      x-ngsi:    
+        type: Property    
+    type:    
+      description: The type of the entity (InventoryItem).    
+      type: string    
+      x-ngsi:    
+        type: Property    
+    weeksForIntervention:    
+      description: Deadline for intervention, in weeks (if anomalyClas is 'Perfect' and this is 52, no intervention is actually required).    
+      type: integer    
+      x-ngsi:    
+        type: Property    
+  required:    
+    - id    
+    - type    
+    - date    
+    - laser    
+    - head    
+    - runningTime    
+    - computedParameters    
+    - anomalyType    
+    - weeksForIntervention    
+    - exceededThreshold    
+    - maintenanceTypeBin    
+    - maintenanceTypeDec    
+    - requiresSkill    
+    - requiresComponent    
+    - interventionDuration    
+  type: object    
+  x-derived-from: ''    
+  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2025 Contributors to Smart Data Models Program    
+  x-license-url: https://github.com/smart-data-models/dataModel.PredictiveMaintenance/blob/master/AIPrediction/LICENSE.md    
+  x-model-schema: https://smart-data-models.github.io/dataModel.PredictiveMaintenance/AIPrediction/schema.json    
+  x-model-tags: maintenance    
+  x-version: 0.0.1    
+```  
+</details>    
+<!-- /60-ModelYaml -->  
+<!-- 70-MiddleNotes -->  
+<!-- /70-MiddleNotes -->  
+<!-- 80-Examples -->  
+## Esempi di payload  
+#### AIPrediction NGSI-v2 valori-chiave Esempio  
+Ecco un esempio di AIPrediction in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-v2 quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+    "id": "https://smart-data-models.github.io/dataModel.PredictiveMaintenance/AIPrediction/aiPrediction01",  
+    "type": "AIPrediction",  
+    "country": "Italy",  
+    "date": "25/12/2025",  
+    "laser": "YLS6000",  
+    "head": "T5-Precitec",  
+    "runningTime": 1411,  
+    "computedParameters": [  
+        {  
+            "name": "param00",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param01",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param02",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param03",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param04",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param05",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param06",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param07",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param08",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param09",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param10",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param11",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param12",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param13",  
+            "value": 0.0  
+        }  
+    ],  
+    "anomalyType": "Near To Fail",  
+    "weeksForIntervention": 1,  
+    "exceededThreshold": [  
+        "Param07",  
+        "Param09",  
+        "Param10",  
+        "Param_12"  
+    ],  
+    "maintenanceTypeBin": "1011",  
+    "maintenanceTypeDec": 11,  
+    "requiresSkill": [  
+        "MaintenanceSkill:maintenanceSkill01"  
+    ],  
+    "requiresComponent": [  
+        "MachineComponent:machineComponent01"  
+    ],  
+    "interventionDuration": 19  
+}  
+```  
+</details>  
+#### AIPrediction NGSI-v2 normalizzato Esempio  
+Ecco un esempio di AIPrediction in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si utilizzano le opzioni e restituisce i dati di contesto di una singola entità.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+    "id": "urn:ngsi-ld:dataModel.PredictiveMaintenance:AIPrediction:aiPrediction01",  
+    "type": "AIPrediction",  
+    "country": {  
+        "type": "Property",  
+        "value": "Italy"  
+    },  
+    "date": {  
+        "type": "Property",  
+        "value": "2025-12-25"  
+    },  
+    "laser": {  
+        "type": "Property",  
+        "value": "YLS6000"  
+    },  
+    "head": {  
+        "type": "Property",  
+        "value": "T5-Precitec"  
+    },  
+    "runningTime": {  
+        "type": "Property",  
+        "value": 1411  
+    },  
+    "computedParameters": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param00"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param01"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param02"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param03"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param04"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param05"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param06"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param07"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param08"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param09"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param10"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param11"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param12"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param13"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            }  
+        ]  
+    },  
+    "anomalyType": {  
+        "type": "Property",  
+        "value": "Near To Fail"  
+    },  
+    "weeksForIntervention": {  
+        "type": "Property",  
+        "value": 1  
+    },  
+    "exceededThreshold": {  
+        "type": "ListProperty",  
+        "value": [  
+            "param07",  
+            "param09",  
+            "param10",  
+            "param12"  
+        ]  
+    },  
+    "maintenanceTypeBin": {  
+        "type": "Property",  
+        "value": "1011"  
+    },  
+    "maintenanceTypeDec": {  
+        "type": "Property",  
+        "value": 11  
+    },  
+    "requiresSkill": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "type": "Relationship",  
+                "id": "MaintenanceSkill:maintenanceSkill01"  
+            }  
+        ]  
+    },  
+    "requiresComponent": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "type": "Relationship",  
+                "id": "MaintenanceComponent:maintenanceComponent01"  
+            }  
+        ]  
+    },  
+    "interventionDuration": {  
+        "type": "Property",  
+        "value": 19  
+    }  
+}  
+```  
+</details>  
+#### AIPrediction NGSI-LD valori-chiave Esempio  
+Ecco un esempio di AIPrediction in formato JSON-LD come valori-chiave. Questo è compatibile con NGSI-LD quando si usa `options=keyValues` e restituisce i dati di contesto di una singola entità.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+    "@context": [  
+        "https://smartdatamodels.org/context.jsonld"  
+    ],  
+    "id": "https://smart-data-models.github.io/dataModel.PredictiveMaintenance/AIPrediction/aiPrediction01",  
+    "type": "AIPrediction",  
+    "country": "Italy",  
+    "date": "2025-12-25",  
+    "laser": "YLS6000",  
+    "head": "T5-Precitec",  
+    "runningTime": 1411,  
+    "computedParameters": [  
+        {  
+            "name": "param00",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param01",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param02",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param03",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param04",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param05",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param06",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param07",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param08",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param09",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param10",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param11",  
+            "value": 0.0  
+        },  
+        {  
+            "name": "param12",  
+            "value": 1.0  
+        },  
+        {  
+            "name": "param13",  
+            "value": 0.0  
+        }  
+    ],  
+    "anomalyType": "Near To Fail",  
+    "weeksForIntervention": 1,  
+    "exceededThreshold": [  
+        "Param07",  
+        "Param09",  
+        "Param10",  
+        "Param_12"  
+    ],  
+    "maintenanceTypeBin": "1011",  
+    "maintenanceTypeDec": 11,  
+    "requiresSkill": [  
+        "MaintenanceSkill:maintenanceSkill01"  
+    ],  
+    "requiresComponent": [  
+        "MachineComponent:machineComponent01"  
+    ],  
+    "interventionDuration": 19  
+}  
+```  
+</details>  
+#### AIPrediction NGSI-LD normalizzata Esempio  
+Ecco un esempio di AIPrediction in formato JSON-LD normalizzato. Questo è compatibile con NGSI-LD quando non si usano opzioni e restituisce i dati di contesto di una singola entità.  
+<details><summary><strong>show/hide example</strong></summary>    
+```json  
+{  
+    "@context": [  
+        "https://smartdatamodels.org/context.jsonld"  
+    ],  
+    "id": "https://smart-data-models.github.io/dataModel.PredictiveMaintenance/AIPrediction/aiPrediction01",  
+    "type": "AIPrediction",  
+    "country": {  
+        "type": "Property",  
+        "value": "Italy"  
+    },  
+    "date": {  
+        "type": "Property",  
+        "value": "2025-12-25"  
+    },  
+    "laser": {  
+        "type": "Property",  
+        "value": "YLS6000"  
+    },  
+    "head": {  
+        "type": "Property",  
+        "value": "T5-Precitec"  
+    },  
+    "runningTime": {  
+        "type": "Property",  
+        "value": 1411  
+    },  
+    "computedParameters": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param00"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param01"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param02"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param03"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param04"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param05"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param06"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param07"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param08"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param09"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param10"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param11"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param12"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 1.0  
+                }  
+            },  
+            {  
+                "name": {  
+                    "type": "Property",  
+                    "value": "param13"  
+                },  
+                "value": {  
+                    "type": "Property",  
+                    "value": 0.0  
+                }  
+            }  
+        ]  
+    },  
+    "anomalyType": {  
+        "type": "Property",  
+        "value": "Near To Fail"  
+    },  
+    "weeksForIntervention": {  
+        "type": "Property",  
+        "value": 1  
+    },  
+    "exceededThreshold": {  
+        "type": "Property",  
+        "value": [  
+            "Param07",  
+            "Param09",  
+            "Param10",  
+            "Param_12"  
+        ]  
+    },  
+    "maintenanceTypeBin": {  
+        "type": "Property",  
+        "value": "1011"  
+    },  
+    "maintenanceTypeDec": {  
+        "type": "Property",  
+        "value": 11  
+    },  
+    "requiresSkill": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "type": "Relationship",  
+                "id": "MaintenanceSkill:maintenanceSkill01"  
+            }  
+        ]  
+    },  
+    "requiresComponent": {  
+        "type": "ListProperty",  
+        "value": [  
+            {  
+                "type": "Relationship",  
+                "id": "MachineComponent:machineComponent01"  
+            }  
+        ]  
+    },  
+    "interventionDuration": {  
+        "type": "Property",  
+        "value": 19  
+    }  
+}  
+```  
+</details><!-- /80-Examples -->  
+<!-- 90-FooterNotes -->  
+<!-- /90-FooterNotes -->  
+<!-- 95-Units -->  
+Vedere [FAQ 10](https://smartdatamodels.org/index.php/faqs/) per ottenere una risposta su come gestire le unità di grandezza.  
+<!-- /95-Units -->  
+<!-- 97-LastFooter -->  
+---  
+[Smart Data Models](https://smartdatamodels.org) +++ [Contribution Manual](https://bit.ly/contribution_manual) +++ [About](https://bit.ly/Introduction_SDM)<!-- /97-LastFooter -->  
