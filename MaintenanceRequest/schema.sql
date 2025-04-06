@@ -1,0 +1,3 @@
+/* (Beta) Export of data model MaintenanceRequest of the subject dataModel.PredictiveMaintenance for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+
+CREATE TABLE MaintenanceRequest (analysisDate DATE, analysisTimeWindow JSON, anomalyIndicator JSON, anomalyType TEXT, customerID TEXT, durationOfOperation NUMERIC, hasConfiguration JSON, machineAddressLocation TEXT, machineID TEXT, maintenanceDeadline DATE, maintenanceRequired JSON, requiresComponent JSON, requiresSkill JSON, type TEXT);
