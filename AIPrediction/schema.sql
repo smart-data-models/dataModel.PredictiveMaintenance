@@ -1,0 +1,3 @@
+/* (Beta) Export of data model AIPrediction of the subject dataModel.PredictiveMaintenance for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+
+CREATE TABLE AIPrediction (anomalyType TEXT, computedParameters JSON, country TEXT, date DATE, exceededThreshold JSON, head TEXT, interventionDuration INTEGER, laser TEXT, maintenanceTypeBin TEXT, maintenanceTypeDec INTEGER, requiresComponent JSON, requiresSkill JSON, runningTime INTEGER, type TEXT, weeksForIntervention INTEGER);
